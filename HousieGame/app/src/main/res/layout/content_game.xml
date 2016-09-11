@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="uday.housie.GameActivity"
+    tools:showIn="@layout/activity_game">
+
+    <Button
+        android:id="@+id/bun"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Restart"
+        android:onClick="refreshCurrentActivity"
+        />
+
+    <TextView
+        android:id="@+id/game_last_no_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"/>
+
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+
+        android:scrollHorizontally="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/bun"/>
+
+    <HorizontalScrollView
+        android:id="@+id/hscr"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bun"
+        >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/game_ll_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center"
+                 />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/hscr"
+        android:id="@+id/game_rcv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="settings"
+        android:layout_alignParentBottom="true"
+        android:onClick="settings"/>
+
+
+</RelativeLayout>
